@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import styles from "../../styles/Home.module.css";
 
 const Jumbotron = () => {
   return (
     <div className="container  py-5 flex items-center justify-center">
       <main className="text-center">
-        <div>
+        <div className={styles.fade_in_image}>
           <Image
             src="https://lh5.googleusercontent.com/p/AF1QipMe0WKfEbEWRExhNZTIxzP2dL5CbDrZ9TJQed-i=w1440-h1080-k-no"
             width={500}
