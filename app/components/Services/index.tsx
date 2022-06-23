@@ -1,4 +1,8 @@
 import React from "react";
+import Truck from "@heroicons/react/outline/TruckIcon";
+import Cart from "@heroicons/react/outline/ShoppingCartIcon";
+import Clock from "@heroicons/react/outline/ClockIcon";
+import Badge from "@heroicons/react/outline/BadgeCheckIcon";
 
 const Services = () => {
   return (
@@ -13,6 +17,12 @@ const Services = () => {
         <li>Wholsale trade supply</li>
         <li>Retail outlet</li>
       </ul>
+      <div className="flex p-5">
+        <Truck className="w-10 h-15 mx-3" />
+        <Cart className="w-10 h-15 mx-3" />
+        <Clock className="w-10 h-15 mx-3" />
+        <Badge className="w-10 h-15 mx-3" />
+      </div>
     </div>
   );
 };
