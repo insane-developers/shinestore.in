@@ -4,6 +4,7 @@ import About from "../components/About";
 import Customers from "../components/Customers";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
+import Products from "../components/Products";
 import Services from "../components/Services";
 import styles from "../styles/Home.module.css";
 
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <About />
         <Services />
         <Customers />
+        <Products />
       </div>
     </div>
   );
