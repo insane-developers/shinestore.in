@@ -16,8 +16,15 @@ const Directions = () => {
   useEffect(() => {
     // Load Google Maps API script with the provided API key
     const loadGoogleMapsApi = () => {
+      const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+      
+      if (!apiKey) {
+        console.error('Google Maps API key is not configured. Please add VITE_GOOGLE_MAPS_API_KEY to your .env file.');
+        return;
+      }
+
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDI9WGmridzvmiWeCR85y8-ZwyBOHM33D8&callback=initMap&libraries=places,geometry`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places,geometry`;
       script.async = true;
       script.defer = true;
 

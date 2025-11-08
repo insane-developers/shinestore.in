@@ -58,7 +58,26 @@ This project is built with modern web technologies:
    bun install
    ```
 
-3. **Start development server**
+3. **Environment Setup**
+
+   Create a `.env` file in the root directory:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Then edit `.env` and add your Google Maps API Key:
+   ```
+   VITE_GOOGLE_MAPS_API_KEY=your_actual_google_maps_api_key_here
+   ```
+   
+   To get a Google Maps API key:
+   - Visit [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select existing one
+   - Enable Maps JavaScript API
+   - Generate an API key
+   - Add website restrictions for security
+
+4. **Start development server**
 
    ```bash
    npm run dev
@@ -66,7 +85,7 @@ This project is built with modern web technologies:
    bun run dev
    ```
 
-4. **Open in browser**
+5. **Open in browser**
    ```
    http://localhost:5173
    ```
