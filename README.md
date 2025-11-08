@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# Shine Store - Premium Cleaning Solutions
 
-## Project info
+## About Shine Store
 
-**URL**: https://lovable.dev/projects/d7be43ac-4136-4463-83cb-c0257b9fdbe0
+Shine Store is a modern, responsive website for **Shine Enterprises**, a leading provider of premium cleaning products and solutions located in Coimbatore, Tamil Nadu, India. We specialize in high-quality cleaning supplies for homes, offices, and industrial applications.
 
-## How can I edit this code?
+### Store Information
 
-There are several ways of editing your application.
+- **Address**: 34 Edyar Street, Coimbatore, Tamil Nadu 641001, India
+- **Phone**: +91 9443106008
+- **Email**: shinestoredotin@gmail.com
+- **Hours**: Mon-Sat: 9:00 AM - 8:00 PM
 
-**Use Lovable**
+## Website Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d7be43ac-4136-4463-83cb-c0257b9fdbe0) and start prompting.
+- **Modern Design**: Clean, professional interface with responsive design
+- **Product Showcase**: Interactive product gallery with hover effects
+- **Store Locator**: Integrated Google Maps with directions
+- **Partner Network**: Carousel displaying trusted partners (AAA, LuLu, Emerald, Amrita, Anandhaas, Mikro Grafio)
+- **Mobile Optimized**: Fully responsive design for all devices
+- **Contact Information**: Easy access to store details and contact methods
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
+This project is built with modern web technologies:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and building
+- **Styling**: Tailwind CSS for responsive design
+- **UI Components**: shadcn/ui component library
+- **Fonts**: Montserrat (headings) and Open Sans (body text) via Google Fonts
+- **Maps Integration**: Google Maps API for store location
+- **Icons**: Lucide React for modern iconography
+- **Carousel**: Embla Carousel for product/partner displays
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Development Setup
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js (v18 or higher)
+- npm or bun package manager
+- Git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. **Clone the repository**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+   ```bash
+   git clone https://github.com/insane-developers/shinestore.in.git
+   cd shinestore.in
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   # or
+   bun run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
+
+### Build for Production
+
+```bash
+npm run build
+# or
+bun run build
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/          # React components
+│   ├── Hero.tsx        # Landing section
+│   ├── Products.tsx    # Product showcase
+│   ├── Partners.tsx    # Partner carousel
+│   ├── Directions.tsx  # Store location & maps
+│   ├── Navbar.tsx      # Navigation
+│   ├── Footer.tsx      # Footer section
+│   └── ui/             # Reusable UI components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utilities and helpers
+└── types/              # TypeScript type definitions
+```
 
-**Use GitHub Codespaces**
+## Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
+This project is proprietary software owned by Shine Enterprises.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contact
 
-## How can I deploy this project?
+For any inquiries about this website or our products:
 
-Simply open [Lovable](https://lovable.dev/projects/d7be43ac-4136-4463-83cb-c0257b9fdbe0) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Website**: [shinestore.in](https://shinestore.in)
+- **Email**: shinestoredotin@gmail.com
+- **Phone**: +91 9443106008
+- **Address**: 34 Edyar Street, Coimbatore, Tamil Nadu 641001, India
