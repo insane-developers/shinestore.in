@@ -31,7 +31,7 @@ const Hero = () => {
             {/* <span className="text-pink-100 text-5xl">for</span> */}
             <br />
             <span className="text-pink-100 text-4xl lg:text-6xl md:text-4xl">
-              homes and industries
+              homes and industries.
             </span>
             {/* <br />
             <span className="text-pink-100 text-5xl">and</span> */}
