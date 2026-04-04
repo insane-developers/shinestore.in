@@ -18,7 +18,7 @@ const Partners = () => {
           className="text-2xl text-center mb-10 text-white"
           style={{ fontFamily: "Montserrat", fontWeight: "700" }}
         >
-          Our Trusted Partners
+          Our Trusted Customers
         </h2>
 
         {/* Desktop version - show all logos */}

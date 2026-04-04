@@ -17,9 +17,11 @@ const Directions = () => {
     // Load Google Maps API script with the provided API key
     const loadGoogleMapsApi = () => {
       const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-      
+
       if (!apiKey) {
-        console.error('Google Maps API key is not configured. Please add VITE_GOOGLE_MAPS_API_KEY to your .env file.');
+        console.error(
+          "Google Maps API key is not configured. Please add VITE_GOOGLE_MAPS_API_KEY to your .env file.",
+        );
         return;
       }
 

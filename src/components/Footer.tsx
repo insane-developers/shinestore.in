@@ -104,7 +104,7 @@ const Footer = () => {
             className="text-gray-500"
             style={{ fontFamily: "Open Sans", fontWeight: "600" }}
           >
-            © 2025 SHINE ENTERPRISES
+            © 2026 SHINE ENTERPRISES
           </p>
         </div>
       </div>
