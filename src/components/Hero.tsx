@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const Hero = () => {
   const scrollToProducts = () => {
@@ -12,71 +12,79 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="pt-32 pb-20 md:pt-40 md:pb-28 px-4 md:px-6 container mx-auto"
+      className="bg-[#323232] text-white pt-32 pb-20 md:pt-40 md:pb-28 px-4 md:px-12 w-full"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-xl">
           <h1
-            className="text-5xl mb-6"
-            style={{ fontFamily: "Montserrat", fontWeight: "800" }}
+            className="text-5xl md:text-6xl lg:text-7xl mb-6 font-bold leading-tight"
+            style={{
+              fontFamily: "Montserrat",
+              fontWeight: "800",
+              letterSpacing: "-0.02em",
+            }}
           >
-            <span className="text-purple-300 text-8xl lg:text-9xl md:text-7xl">
-              shine in clean
-            </span>
+            shine in <span className="text-green-400">clean</span>
             <br />
-            <span className="text-pink-100 text-5xl lg:text-6xl md:text-4xl">
-              solutions for
-            </span>
-            {/* <br /> */}
-            {/* <span className="text-pink-100 text-5xl">for</span> */}
-            <br />
-            <span className="text-pink-100 text-4xl lg:text-6xl md:text-4xl">
-              homes and industries.
-            </span>
-            {/* <br />
-            <span className="text-pink-100 text-5xl">and</span> */}
-            {/* <br />
-            <span className="text-pink-100 text-5xl">industries</span> */}
+            solutions for homes and industries.
           </h1>
-          <div className="hidden md:block">
+          <p className="text-gray-300 text-lg mb-8 max-w-lg">
+            Professional grade hygiene products engineered for extreme
+            efficiency. From high-traffic industrial floors to pristine home
+            environments.
+          </p>
+          <div className="flex flex-wrap gap-4">
             <button
               onClick={scrollToProducts}
-              className="inline-block mt-6 bg-purple-500 hover:bg-purple-600 text-white py-3 px-6 rounded-full transition-all transform hover:translate-y-[-3px] hover:shadow-lg animate-pulse-slow"
-              style={{ fontFamily: "Open Sans", fontWeight: "600" }}
+              className="bg-[#B472F5] hover:bg-[#a15ee6] text-white font-semibold py-3 px-8 rounded-md transition-all"
             >
               Get Started
-              <ChevronRight className="inline ml-1" size={16} />
+            </button>
+            <button className="bg-transparent border border-gray-400 hover:border-white text-white font-semibold py-3 px-8 rounded-md transition-all">
+              View Catalog
             </button>
           </div>
         </div>
 
-        <div className="relative hidden md:block">
-          <div className="absolute -right-10 top-0 w-72 h-72 md:w-80 md:h-80 rounded-[40px] overflow-hidden border-4 border-white/20 animate-bounce-subtle">
+        <div className="relative mt-12 md:mt-0 flex justify-end">
+          {/* The corridor image container */}
+          <div className="relative w-full max-w-[500px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden border-2 border-green-500/20 transform md:rotate-2 shadow-2xl">
             <img
               src="/trustimage.jpg"
-              alt="Clean kitchen space"
+              alt="Clean corridor space"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src =
+                  "https://images.unsplash.com/photo-1527576539890-dfa815648363";
+              }}
             />
+            {/* Dark green overlay at the bottom for shading */}
+            <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 via-transparent to-transparent"></div>
           </div>
 
-          <div className="absolute right-10 bottom-0 md:right-20 w-60 h-60 md:w-96 md:h-96 rounded-[40px] overflow-hidden border-4 border-green-400/30">
-            <img
-              src="https://images.unsplash.com/photo-1527576539890-dfa815648363"
-              alt="Cleaning service"
-              className="w-full h-full object-cover"
-            />
+          {/* Floating Card */}
+          <div className="absolute top-auto bottom-8 -left-4 md:-left-12 lg:left-0 bg-[#E8EDEE] text-gray-900 p-6 rounded-xl shadow-xl w-[260px] md:w-[300px]">
+            <div className="flex items-center gap-2 mb-2 text-[#7F41C9]">
+              <CheckCircle2
+                size={24}
+                className="flex-shrink-0"
+                fill="currentColor"
+                color="white"
+              />
+              <h3 className="font-bold text-[0.9rem] uppercase leading-tight tracking-wider">
+                Trusted
+                <br />
+                Authority
+              </h3>
+            </div>
+            <h4 className="font-bold text-xl mb-2 text-black">
+              100% Satisfaction
+            </h4>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              Best quality industrial products for professional procurement.
+            </p>
           </div>
-        </div>
-
-        <div className="block md:hidden">
-          <button
-            onClick={scrollToProducts}
-            className="inline-block mt-6 bg-purple-500 hover:bg-purple-600 text-white py-3 px-6 rounded-full transition-all transform hover:translate-y-[-3px] hover:shadow-lg animate-pulse-slow"
-            style={{ fontFamily: "Open Sans", fontWeight: "600" }}
-          >
-            Get Started
-            <ChevronRight className="inline ml-1" size={16} />
-          </button>
         </div>
       </div>
     </section>

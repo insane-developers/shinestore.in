@@ -1,19 +1,22 @@
-
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Products from '../components/Products';
-import Partners from '../components/Partners';
-import Directions from '../components/Directions';
-import Footer from '../components/Footer';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Products from "../components/Products";
+import Partners from "../components/Partners";
+import BulkSupply from "../components/BulkSupply";
+import Directions from "../components/Directions";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen font-sans overflow-hidden bg-white">
       <Navbar />
       <Hero />
       <Partners />
-      <Products />
+      <div id="products">
+        <BulkSupply />
+        <Products />
+      </div>
       <Directions />
       <Footer />
     </div>

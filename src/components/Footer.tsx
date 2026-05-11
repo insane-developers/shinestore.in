@@ -1,5 +1,4 @@
 import React from "react";
-import AnimatedLogo from "./AnimatedLogo";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 const Footer = () => {
@@ -11,104 +10,112 @@ const Footer = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-16 bg-black text-white border-t border-purple-900/30"
-    >
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 mb-10 items-start justify-items-center md:justify-items-start">
-          {/* Column 1 - Logo & Company Info */}
-          <div className="space-y-6 w-full max-w-sm">
-            <div className="mb-6">
-              <AnimatedLogo />
+    <footer id="contact" className="bg-white border-t border-gray-200 pt-16 pb-8">
+      <div className="container mx-auto px-4 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+          {/* Column 1 - Company Info */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900 tracking-wide">
+              shinestore.in
+            </h2>
+
+            <div className="space-y-1 text-sm text-gray-600 font-medium">
+              <h3 className="text-[#825CD6] font-bold uppercase tracking-wider mb-3 text-xs">
+                REGD OFFICE:
+              </h3>
+              <p>Shine Enterprises</p>
+              <p>GSTIN: 33AICPB7047C1ZX</p>
+              <p>34 Edyar street</p>
+              <p>Coimbatore 641001</p>
+              <p>Tamil Nadu, India</p>
             </div>
 
-            <div className="space-y-4">
-              <h3
-                className="text-lg text-purple-300"
-                style={{ fontFamily: "Montserrat", fontWeight: "700" }}
+            <div className="pt-2">
+              <button
+                onClick={() => scrollToSection("directions")}
+                className="inline-flex items-center gap-2 bg-[#F6C000] text-gray-900 px-5 py-2.5 rounded-full hover:bg-yellow-400 transition-all font-bold text-xs tracking-wider"
               >
-                Regd office:
-              </h3>
-              <div
-                className="space-y-1 text-gray-300"
-                style={{ fontFamily: "Open Sans", fontWeight: "600" }}
-              >
-                <p
-                  className="text-white"
-                  style={{ fontFamily: "Montserrat", fontWeight: "700" }}
-                >
-                  Shine Enterprises
-                </p>
-                <p>GSTIN: 33AICPB7047C1ZX</p>
-                <p>34 Edyar street</p>
-                <p>Coimbatore 641001</p>
-                <p>Tamil Nadu</p>
-                <p>India</p>
-              </div>
-
-              <div className="pt-4">
-                <a
-                  href="#directions"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("directions");
-                  }}
-                  className="inline-flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-300 transition-all"
-                  style={{ fontFamily: "Montserrat", fontWeight: "700" }}
-                >
-                  GET DIRECTION
-                  <ArrowRight size={18} />
-                </a>
-              </div>
+                GET DIRECTION
+                <ArrowRight size={16} />
+              </button>
             </div>
           </div>
 
-          {/* Column 2 - Contact Information */}
-          <div className="space-y-6 w-full max-w-sm md:justify-self-end">
-            <div className="flex items-center gap-4">
-              <Mail size={24} className="text-white" />
-              <a
-                href="mailto:shinestoredotin@gmail.com"
-                className="text-white hover:text-purple-300 transition-colors"
-                style={{ fontFamily: "Open Sans", fontWeight: "600" }}
-              >
-                shinestoredotin@gmail.com
-              </a>
-            </div>
+          {/* Column 2 - Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
+              QUICK LINKS
+            </h3>
+            <ul className="space-y-4 text-sm text-gray-600 font-medium">
+              <li>
+                <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="hover:text-[#08734A] transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection("products"); }} className="hover:text-[#08734A] transition-colors">Products</a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#08734A] transition-colors">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#08734A] transition-colors">Terms of Service</a>
+              </li>
+            </ul>
+          </div>
 
-            <div className="flex items-center gap-4">
-              <Phone size={24} className="text-white" />
-              <a
-                href="tel:+919443106008"
-                className="text-white hover:text-purple-300 transition-colors"
-                style={{ fontFamily: "Open Sans", fontWeight: "600" }}
-              >
-                +91 9443106008
-              </a>
-            </div>
+          {/* Column 3 - For Institutions */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
+              FOR INSTITUTIONS
+            </h3>
+            <ul className="space-y-4 text-sm text-gray-600 font-medium">
+              <li>
+                <a href="#" className="hover:text-[#08734A] transition-colors">Institutional Login</a>
+              </li>
+              <li>
+                <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection("products"); }} className="hover:text-[#08734A] transition-colors">Bulk Inquiry</a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#08734A] transition-colors">Sourcing Guide</a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#08734A] transition-colors">Safety Datasheets</a>
+              </li>
+            </ul>
+          </div>
 
-            <div className="flex items-start gap-4">
-              <MapPin size={24} className="text-white mt-1" />
-              <div style={{ fontFamily: "Open Sans", fontWeight: "600" }}>
-                <p className="text-white">34 Edyar Street</p>
-                <p className="text-white">Coimbatore 641001</p>
+          {/* Column 4 - Contact */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
+              CONTACT
+            </h3>
+            <div className="space-y-5 text-sm text-gray-600 font-medium">
+              <a href="mailto:shinestoredotin@gmail.com" className="flex items-center gap-3 hover:text-[#08734A] transition-colors">
+                <Mail size={18} className="text-[#0A6C4A]" />
+                <span>shinestoredotin@gmail.com</span>
+              </a>
+              <a href="tel:+919443106008" className="flex items-center gap-3 hover:text-[#08734A] transition-colors">
+                <Phone size={18} className="text-[#0A6C4A]" />
+                <span>+91 9443106008</span>
+              </a>
+              <div className="flex items-start gap-3">
+                <MapPin size={18} className="text-[#0A6C4A] shrink-0 mt-0.5" />
+                <span>
+                  34 Edyar Street<br />
+                  Coimbatore 641001
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="pt-10 border-t border-gray-800 text-center">
-          <p
-            className="text-gray-500"
-            style={{ fontFamily: "Open Sans", fontWeight: "600" }}
-          >
-            © 2026 SHINE ENTERPRISES
+        <div className="pt-6 border-t border-gray-200 text-center">
+          <p className="text-gray-500 text-sm font-medium">
+            &copy; 2026 SHINE ENTERPRISES. All Rights Reserved.
           </p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
