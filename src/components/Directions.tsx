@@ -1,114 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { MapPin, MessageCircleQuestion, Clock, Truck, Map } from "lucide-react";
 
 const Directions = () => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const [mapLoaded, setMapLoaded] = useState(false);
-
-  // Store coordinates
-  const storeLocation = {
-    lat: 10.997194126419899,
-    lng: 76.957896408306,
-  };
-
-  useEffect(() => {
-    // Load Google Maps API script with the provided API key
-    const loadGoogleMapsApi = () => {
-      const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-
-      if (!apiKey) {
-        console.error(
-          "Google Maps API key is not configured. Please add VITE_GOOGLE_MAPS_API_KEY to your .env file.",
-        );
-        return;
-      }
-
-      const script = document.createElement("script");
-      script.src =
-        "https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places,geometry";
-      script.async = true;
-      script.defer = true;
-
-      // Define the callback function globally
-      window.initMap = () => {
-        if (!mapRef.current) return;
-
-        const map = new window.google.maps.Map(mapRef.current, {
-          center: storeLocation,
-          zoom: 15,
-          disableDefaultUI: true, // Clean map style
-          styles: [
-            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-            {
-              elementType: "labels.text.stroke",
-              stylers: [{ color: "#242f3e" }],
-            },
-            {
-              elementType: "labels.text.fill",
-              stylers: [{ color: "#746855" }],
-            },
-            {
-              featureType: "administrative.locality",
-              elementType: "labels.text.fill",
-              stylers: [{ color: "#d59563" }],
-            },
-            {
-              featureType: "water",
-              elementType: "geometry",
-              stylers: [{ color: "#17263c" }],
-            },
-            {
-              featureType: "water",
-              elementType: "labels.text.fill",
-              stylers: [{ color: "#515c6d" }],
-            },
-            {
-              featureType: "water",
-              elementType: "labels.text.stroke",
-              stylers: [{ color: "#17263c" }],
-            },
-          ],
-        });
-
-        // Add marker for store location
-        const marker = new window.google.maps.Marker({
-          position: storeLocation,
-          map: map,
-          title: "Shine Store",
-          animation: window.google.maps.Animation.DROP,
-        });
-
-        const infoWindow = new window.google.maps.InfoWindow({
-          content: `
-            <div style='padding: 8px; font-family: sans-serif;'>
-              <h3 style='margin: 0 0 5px 0; font-size: 14px; font-weight: bold; color: #111;'>Shine Enterprises</h3>
-              <p style='margin: 0; font-size: 12px; color: #555;'>34 Edyar Street, Coimbatore</p>
-            </div>
-          `,
-        });
-
-        marker.addListener("click", () => {
-          infoWindow.open(map, marker);
-        });
-
-        setMapLoaded(true);
-      };
-
-      document.head.appendChild(script);
-    };
-
-    if (!window.google) {
-      loadGoogleMapsApi();
-    } else if (window.initMap) {
-      window.initMap();
-    }
-
-    // Cleanup
-    return () => {
-      window.initMap = undefined;
-    };
-  }, []);
-
   return (
     <section
       id="directions"
@@ -219,24 +112,20 @@ const Directions = () => {
           </div>
 
           {/* Right Column - Map Interface */}
-          <div className="relative w-full h-[400px] lg:h-[550px] flex items-center justify-center p-6">
+          <div className="relative w-full h-[400px] lg:h-[550px] flex items-center justify-center p-6 bg-[#0a0a0a]">
             {/* Offset green border mimicking the design */}
             <div className="absolute inset-0 border border-[#1CE594]/30 rounded-xl transform translate-x-4 translate-y-4 -rotate-1 pointer-events-none"></div>
 
             {/* Outer map container taking up the entire tan box */}
             <div className="relative w-full h-full bg-[#d0aba0] rounded-xl shadow-2xl z-10 p-6 md:p-10 flex items-center justify-center">
-              {/* The actual map target element isolated from React's conditional rendering */}
-              <div
-                ref={mapRef}
-                className={`w-full h-full bg-[#d0aba0] rounded-lg overflow-hidden transition-opacity duration-700 ${mapLoaded ? "opacity-100" : "opacity-0"}`}
-              />
-
-              {/* Fallback while map loads */}
-              {!mapLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center text-gray-800 font-bold pointer-events-none">
-                  Loading Map...
-                </div>
-              )}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5512903146805!2d76.95531747509179!3d10.997202189165355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8590eaf737ae9%3A0xe1d83215842d386c!2sShine%20Enterprises!5e0!3m2!1sen!2sin!4v1778599523484!5m2!1sen!2sin"
+                className="w-full h-full rounded-lg"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
