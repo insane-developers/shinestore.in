@@ -100,7 +100,10 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center space-x-6">
-            <button className="hidden md:block bg-[#085E39] hover:bg-[#06492b] text-white px-5 py-2.5 rounded font-semibold transition-colors cursor-pointer">
+            <button
+              onClick={() => handleNavigation("products")}
+              className="hidden md:block bg-[#085E39] hover:bg-[#06492b] text-white px-5 py-2.5 rounded font-semibold transition-colors cursor-pointer"
+            >
               Get Started
             </button>
 
@@ -184,7 +187,10 @@ export default function Navbar() {
             Contact
           </button>
 
-          <button className="bg-[#085E39] hover:bg-[#06492b] text-white px-8 py-3 rounded-sm font-semibold transition-colors mt-4">
+          <button
+            onClick={() => handleNavigation("products")}
+            className="bg-[#085E39] hover:bg-[#06492b] text-white px-8 py-3 rounded-sm font-semibold transition-colors mt-4"
+          >
             Get Started
           </button>
         </div>

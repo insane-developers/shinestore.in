@@ -1,7 +1,10 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToProducts = () => {
     const section = document.getElementById("products");
     if (section) {
@@ -40,7 +43,10 @@ const Hero = () => {
             >
               Get Started
             </button>
-            <button className="bg-transparent border border-gray-400 hover:border-white text-white font-semibold py-3 px-8 rounded-md transition-all">
+            <button
+              onClick={() => navigate("/catalog")}
+              className="bg-transparent border border-gray-400 hover:border-white text-white font-semibold py-3 px-8 rounded-md transition-all"
+            >
               View Catalog
             </button>
           </div>
