@@ -56,10 +56,14 @@ export default function Navbar() {
       >
         <div className="container mx-auto flex justify-between items-center px-5 md:px-16">
           <div
-            className="font-bold text-2xl text-[#085E39] tracking-tight cursor-pointer"
+            className="cursor-pointer flex items-center"
             onClick={() => handleNavigation("home")}
           >
-            SHINE ENTERPRISES
+            <img
+              src="/shinefront-logo-transparent.png"
+              alt="Shine Enterprises"
+              className="h-10 w-auto"
+            />
           </div>
 
           <nav className="hidden md:flex space-x-10 items-center text-[15px]">
@@ -83,7 +87,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => handleNavigation("institutional")}
-              className={"font-semibold transition-colors "}
+              className={" transition-colors "}
             >
               Institutional Orders
             </button>
@@ -169,7 +173,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => handleNavigation("institutional")}
-            className={"transition-colors font-semibold "}
+            className={"transition-colors  "}
           >
             Institutional Orders
           </button>
