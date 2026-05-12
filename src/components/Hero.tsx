@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative mt-12 md:mt-0 flex justify-end">
+        <div className="relative mt-12 md:mt-0 mb-12 md:mb-0 flex justify-end">
           {/* The corridor image container */}
           <div className="relative w-full max-w-[500px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden border-2 border-green-500/20 transform md:rotate-2 shadow-2xl">
             <img
@@ -64,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* Floating Card */}
-          <div className="absolute top-auto bottom-8 -left-4 md:-left-12 lg:left-0 bg-[#E8EDEE] text-gray-900 p-6 rounded-xl shadow-xl w-[260px] md:w-[300px]">
+          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:translate-x-0 md:bottom-8 md:-left-12 lg:left-0 bg-[#E8EDEE] text-gray-900 p-6 rounded-xl shadow-xl w-[90%] md:w-[300px]">
             <div className="flex items-center gap-2 mb-2 text-[#7F41C9]">
               <CheckCircle2
                 size={24}
