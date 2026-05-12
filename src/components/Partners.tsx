@@ -32,7 +32,7 @@ const Partners = () => {
                 <img
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  className={`max-h-12 max-w-[90%] object-contain ${partner.invert ? "invert brightness-0 opacity-80" : ""}`}
+                  className={`max-h-12 max-w-[90%] object-contain`}
                 />
               </div>
             </div>
@@ -61,7 +61,7 @@ const Partners = () => {
                       <img
                         src={partner.logo}
                         alt={`${partner.name} logo`}
-                        className={`max-h-10 max-w-[80%] object-contain ${partner.invert ? "invert brightness-0 opacity-80" : ""}`}
+                        className={`max-h-10 max-w-[80%] object-contain `}
                       />
                     </div>
                   </div>
