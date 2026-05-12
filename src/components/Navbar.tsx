@@ -148,9 +148,9 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={
-          "md:hidden fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out "
-        }
+        className={`md:hidden fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex flex-col h-full justify-center items-center space-y-8 text-xl pt-16">
           <button
