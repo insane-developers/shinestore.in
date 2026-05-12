@@ -50,7 +50,7 @@ const Hero = () => {
           {/* The corridor image container */}
           <div className="relative w-full max-w-[500px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden border-2 border-green-500/20 transform md:rotate-2 shadow-2xl">
             <img
-              src="/trustimage.jpg"
+              src="/lovable-uploads/hero-image.jpg"
               alt="Clean corridor space"
               className="w-full h-full object-cover"
               onError={(e) => {
