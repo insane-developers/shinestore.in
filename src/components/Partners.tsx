@@ -5,8 +5,8 @@ const Partners = () => {
   const partners = [
     { name: "AAA", logo: "/lovable-uploads/image 4.png" },
     { name: "LuLu", logo: "/lovable-uploads/image 5.png" },
-    { name: "EMERALD", logo: "/lovable-uploads/image 6.png", invert: true },
-    { name: "AMRITA", logo: "/lovable-uploads/image 10.png", invert: true },
+    { name: "EMERALD", logo: "/lovable-uploads/image 6.png" },
+    { name: "AMRITA", logo: "/lovable-uploads/image 10.svg" },
     { name: "Anandhaas", logo: "/lovable-uploads/image 8.png" },
     { name: "MIKRO GRAFIO", logo: "/lovable-uploads/image 9.png" },
   ];
