@@ -1,7 +1,9 @@
 import React from "react";
 import { Briefcase, CheckCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const BulkSupply = () => {
+  const navigate = useNavigate();
   const benefits = [
     "Custom Formulations",
     "Direct Factory Shipping",
@@ -37,10 +39,16 @@ const BulkSupply = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white hover:bg-gray-100 text-[#08734A] font-bold py-3 px-8 rounded-lg transition-colors">
+              <button
+                onClick={() => navigate("/bulk-inquiry")}
+                className="bg-white hover:bg-gray-100 text-[#08734A] font-bold py-3 px-8 rounded-lg transition-colors"
+              >
                 Inquire Now
               </button>
-              <button className="border border-green-300 hover:border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+              <button
+                onClick={() => navigate("/catalog")}
+                className="border border-green-300 hover:border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+              >
                 Download Catalog
               </button>
             </div>

@@ -10,7 +10,10 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-white border-t border-gray-200 pt-16 pb-8">
+    <footer
+      id="contact"
+      className="bg-white border-t border-gray-200 pt-16 pb-8"
+    >
       <div className="container mx-auto px-4 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Column 1 - Company Info */}
@@ -48,16 +51,44 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm text-gray-600 font-medium">
               <li>
-                <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="hover:text-[#08734A] transition-colors">Home</a>
+                <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("home");
+                  }}
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection("products"); }} className="hover:text-[#08734A] transition-colors">Products</a>
+                <a
+                  href="#products"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("products");
+                  }}
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Products
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#08734A] transition-colors">Privacy Policy</a>
+                <a
+                  href="/privacy"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Privacy Policy
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#08734A] transition-colors">Terms of Service</a>
+                <a
+                  href="/terms"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Terms of Service
+                </a>
               </li>
             </ul>
           </div>
@@ -69,16 +100,36 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm text-gray-600 font-medium">
               <li>
-                <a href="#" className="hover:text-[#08734A] transition-colors">Institutional Login</a>
+                <a
+                  href="/institutional-login"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Institutional Login
+                </a>
               </li>
               <li>
-                <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection("products"); }} className="hover:text-[#08734A] transition-colors">Bulk Inquiry</a>
+                <a
+                  href="/bulk-inquiry"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Bulk Inquiry
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#08734A] transition-colors">Sourcing Guide</a>
+                <a
+                  href="/sourcing-guide"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Sourcing Guide
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#08734A] transition-colors">Safety Datasheets</a>
+                <a
+                  href="/safety-datasheets"
+                  className="hover:text-[#08734A] transition-colors"
+                >
+                  Safety Datasheets
+                </a>
               </li>
             </ul>
           </div>
@@ -89,18 +140,25 @@ const Footer = () => {
               CONTACT
             </h3>
             <div className="space-y-5 text-sm text-gray-600 font-medium">
-              <a href="mailto:shinestoredotin@gmail.com" className="flex items-center gap-3 hover:text-[#08734A] transition-colors">
+              <a
+                href="mailto:shinestoredotin@gmail.com"
+                className="flex items-center gap-3 hover:text-[#08734A] transition-colors"
+              >
                 <Mail size={18} className="text-[#0A6C4A]" />
                 <span>shinestoredotin@gmail.com</span>
               </a>
-              <a href="tel:+919443106008" className="flex items-center gap-3 hover:text-[#08734A] transition-colors">
+              <a
+                href="tel:+919443106008"
+                className="flex items-center gap-3 hover:text-[#08734A] transition-colors"
+              >
                 <Phone size={18} className="text-[#0A6C4A]" />
                 <span>+91 9443106008</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-[#0A6C4A] shrink-0 mt-0.5" />
                 <span>
-                  34 Edyar Street<br />
+                  34 Edyar Street
+                  <br />
                   Coimbatore 641001
                 </span>
               </div>
