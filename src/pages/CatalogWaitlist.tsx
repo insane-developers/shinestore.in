@@ -1,5 +1,17 @@
 import React, { useState } from "react";
-import { PenTool, Settings, ArrowLeft, Mail, CheckCircle2 } from "lucide-react";
+import {
+  PenTool,
+  Settings,
+  ArrowLeft,
+  Mail,
+  CheckCircle2,
+  Palette,
+  Brush,
+  Sparkles,
+  Droplets,
+  Search,
+  FileSearch,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CatalogWaitlist = () => {
@@ -16,8 +28,35 @@ const CatalogWaitlist = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9F9] flex flex-col items-center justify-center p-6 text-center">
-      <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl max-w-xl w-full flex flex-col items-center border border-gray-100 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F8F9F9] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+      {/* Background Animated Floating Icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {/* Designing */}
+        <Palette className="absolute top-[15%] left-[5%] md:left-[10%] text-[#825CD6]/10 w-24 h-24 md:w-32 md:h-32 animate-pulse-slow" />
+        <Brush
+          className="absolute bottom-[20%] right-[10%] md:right-[15%] text-[#085E39]/10 w-20 h-20 md:w-28 md:h-28 animate-bounce-subtle"
+          style={{ animationDelay: "1s" }}
+        />
+
+        {/* Cleaning */}
+        <Sparkles className="absolute top-[25%] md:top-[30%] right-[5%] md:right-[10%] text-[#F6C000]/20 w-16 h-16 md:w-24 md:h-24 animate-pulse" />
+        <Droplets
+          className="absolute bottom-[5%] md:bottom-[10%] left-[10%] md:left-[20%] text-[#085E39]/10 w-20 h-20 md:w-32 md:h-32 animate-bounce-subtle"
+          style={{ animationDelay: "1.5s" }}
+        />
+
+        {/* Finding / Experts */}
+        <Search
+          className="absolute top-[60%] left-[2%] md:left-[5%] text-[#825CD6]/10 w-16 h-16 md:w-24 md:h-24 animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        />
+        <FileSearch
+          className="absolute top-[15%] md:top-[20%] right-[20%] md:right-[30%] text-[#085E39]/10 w-16 h-16 md:w-24 md:h-24 animate-bounce-subtle"
+          style={{ animationDelay: "0.5s" }}
+        />
+      </div>
+
+      <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl max-w-xl w-full flex flex-col items-center border border-gray-100 relative overflow-hidden z-10">
         {/* Background design elements */}
         <div className="absolute top-0 right-0 w-40 h-40 bg-[#085E39]/5 rounded-bl-full z-0"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#825CD6]/5 rounded-tr-full z-0"></div>
