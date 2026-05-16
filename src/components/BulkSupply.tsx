@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { Briefcase, CheckCircle2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const BulkSupply = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const benefits = [
     "Custom Formulations",
     "Direct Factory Shipping",
@@ -40,13 +41,13 @@ const BulkSupply = () => {
 
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => navigate("/bulk-inquiry")}
+                onClick={() => router.push("/bulk-inquiry")}
                 className="bg-white hover:bg-gray-100 text-[#08734A] font-bold py-3 px-8 rounded-lg transition-colors"
               >
                 Inquire Now
               </button>
               <button
-                onClick={() => navigate("/catalog")}
+                onClick={() => router.push("/catalog")}
                 className="border border-green-300 hover:border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg transition-colors"
               >
                 Download Catalog

@@ -1,13 +1,14 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const isInstitutionalPage = location.pathname === "/institutional";
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,19 +22,22 @@ export default function Navbar() {
     setIsOpen(false);
 
     if (sectionId === "institutional") {
-      navigate("/institutional");
-      window.scrollTo(0, 0);
+      router.push("/institutional");
       return;
     }
 
-    if (isInstitutionalPage) {
-      // If we're on the institutional page and click a home anchor, go to home first
-      navigate("/");
+    if (!isHomePage) {
+      // If we're not on the home page and click a home anchor, go to home first
+      router.push("/");
       // Give it a tiny delay to render Home before scrolling
       setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section)
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (sectionId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const section = document.getElementById(sectionId);
+          if (section)
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }, 100);
       return;
     }

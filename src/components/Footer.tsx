@@ -1,8 +1,35 @@
+"use client";
 import React from "react";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isHomePage = pathname === "/";
+
   const scrollToSection = (sectionId: string) => {
+    if (!isHomePage && sectionId !== "contact") {
+      router.push("/");
+      setTimeout(() => {
+        if (sectionId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }, 300);
+      return;
+    }
+
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });

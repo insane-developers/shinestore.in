@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   PenTool,
@@ -12,18 +13,41 @@ import {
   Search,
   FileSearch,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const CatalogWaitlist = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      // Logic to submit the email to your backend would go here
+    if (email && !isSubmitting) {
+      setIsSubmitting(true);
+      try {
+        const response = await fetch(
+          "https://api.shinestore.in/v0/catalog/interest",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+          },
+        );
+
+        if (response.ok) {
+          setSubmitted(true);
+        } else {
+          console.error("Failed to submit email");
+        }
+      } catch (error) {
+        console.error("Error submitting email:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -109,9 +133,10 @@ const CatalogWaitlist = () => {
               </div>
               <button
                 type="submit"
-                className="bg-[#085E39] hover:bg-[#06492b] text-white font-semibold flex-shrink-0 px-8 py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg"
+                disabled={isSubmitting}
+                className="bg-[#085E39] hover:bg-[#06492b] text-white font-semibold flex-shrink-0 px-8 py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg disabled:opacity-75 disabled:cursor-not-allowed"
               >
-                Notify Me
+                {isSubmitting ? "Submitting..." : "Notify Me"}
               </button>
             </div>
           </form>
@@ -127,7 +152,7 @@ const CatalogWaitlist = () => {
         )}
 
         <button
-          onClick={() => navigate("/")}
+          onClick={() => router.push("/")}
           className="flex items-center gap-2 text-gray-500 hover:text-[#085E39] font-medium mt-10 transition-colors relative z-10"
         >
           <ArrowLeft size={16} />

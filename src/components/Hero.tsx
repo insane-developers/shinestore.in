@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const scrollToProducts = () => {
     const section = document.getElementById("products");
@@ -44,7 +45,7 @@ const Hero = () => {
               Get Started
             </button>
             <button
-              onClick={() => navigate("/catalog")}
+              onClick={() => router.push("/catalog")}
               className="bg-transparent border border-gray-400 hover:border-white text-white font-semibold py-3 px-8 rounded-md transition-all"
             >
               View Catalog

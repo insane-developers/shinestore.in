@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { Construction, ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const ComingSoon = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-[#F8F9F9] flex flex-col items-center justify-center p-6 text-center">
@@ -28,7 +29,7 @@ const ComingSoon = () => {
         </p>
 
         <button
-          onClick={() => navigate("/")}
+          onClick={() => router.push("/")}
           className="flex items-center gap-2 bg-[#085E39] hover:bg-[#06492b] text-white font-semibold py-3 px-8 rounded-md transition-colors"
         >
           <ArrowLeft size={18} />
