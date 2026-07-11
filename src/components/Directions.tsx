@@ -58,7 +58,7 @@ const Directions = () => {
                     +91 9443106008
                   </p>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    shinestoredotin@gmail.com
+                    contact@shinestore.in
                   </p>
                 </div>
               </div>
