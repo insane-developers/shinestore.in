@@ -27,8 +27,15 @@ const CatalogWaitlist = () => {
     if (email && !isSubmitting) {
       setIsSubmitting(true);
       try {
+        let baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.shinestore.in";
+        
+        // Fallback to local backend if running production build locally on localhost
+        if (typeof window !== "undefined" && window.location.hostname === "localhost" && baseUrl.includes("api.shinestore.in")) {
+          baseUrl = "http://localhost:5000";
+        }
+
         const response = await fetch(
-          "https://api.shinestore.in/v0/catalog/interest",
+          `${baseUrl}/v0/catalog/interest`,
           {
             method: "POST",
             headers: {

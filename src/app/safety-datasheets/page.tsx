@@ -42,28 +42,63 @@ export default function SafetyDatasheets() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate database/email API submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      let baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.shinestore.in";
+      
+      // Fallback to local backend if running production build locally on localhost
+      if (typeof window !== "undefined" && window.location.hostname === "localhost" && baseUrl.includes("api.shinestore.in")) {
+        baseUrl = "http://localhost:5000";
+      }
+      
+      const API_URL = `${baseUrl}/v0/compliance/request`;
+
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Request Submitted!",
+          description: `Thank you, ${formData.name}. We've received your request for the ${formData.docType} of "${formData.product}". We will email the documents to ${formData.email} shortly.`,
+          duration: 5000,
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          organization: "",
+          docType: "Safety Datasheet (SDS)",
+          product: "",
+          message: ""
+        });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: responseData.message || "Failed to submit request. Please try again or contact us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting compliance request:", error);
       toast({
-        title: "Request Submitted Successfully",
-        description: `Your request for the ${formData.docType} of "${formData.product || 'selected products'}" has been sent. We will email the files to ${formData.email} shortly.`,
-        duration: 5000,
+        title: "Connection Error",
+        description: "Could not connect to the server. Please check your connection or contact us directly.",
+        variant: "destructive",
       });
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        organization: "",
-        docType: "Safety Datasheet (SDS)",
-        product: "",
-        message: ""
-      });
-    }, 1500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
