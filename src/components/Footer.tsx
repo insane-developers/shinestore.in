@@ -172,7 +172,7 @@ const Footer = () => {
                 className="flex items-center gap-3 hover:text-[#08734A] transition-colors"
               >
                 <Mail size={18} className="text-[#0A6C4A]" />
-                <span>shinestoredotin@gmail.com</span>
+                <span>contact@shinestore.in</span>
               </a>
               <a
                 href="tel:+919443106008"
