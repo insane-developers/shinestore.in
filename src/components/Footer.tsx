@@ -168,7 +168,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-5 text-sm text-gray-600 font-medium">
               <a
-                href="mailto:shinestoredotin@gmail.com"
+                href="mailto:contact@shinestore.in"
                 className="flex items-center gap-3 hover:text-[#08734A] transition-colors"
               >
                 <Mail size={18} className="text-[#0A6C4A]" />
