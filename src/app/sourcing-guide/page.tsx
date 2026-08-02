@@ -181,7 +181,7 @@ export default function SourcingGuide() {
               Connect with our Institutional Supply Specialist. We'll consult, send free samples, and deliver custom quotes.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link href="/bulk-inquiry" className="bg-[#F6C000] text-gray-900 hover:bg-yellow-400 font-bold py-3.5 px-8 rounded-full transition-all text-xs tracking-wider uppercase inline-flex items-center gap-2">
+              <Link href="/institutional#rfq" className="bg-[#F6C000] text-gray-900 hover:bg-yellow-400 font-bold py-3.5 px-8 rounded-full transition-all text-xs tracking-wider uppercase inline-flex items-center gap-2">
                 Go to Bulk Inquiry
                 <ChevronRight size={16} />
               </Link>

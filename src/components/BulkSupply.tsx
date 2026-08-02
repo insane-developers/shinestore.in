@@ -41,7 +41,7 @@ const BulkSupply = () => {
 
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => router.push("/bulk-inquiry")}
+                onClick={() => router.push("/institutional#rfq")}
                 className="bg-white hover:bg-gray-100 text-[#08734A] font-bold py-3 px-8 rounded-lg transition-colors"
               >
                 Inquire Now
