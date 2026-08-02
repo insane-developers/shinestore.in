@@ -128,15 +128,16 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-gray-600 font-medium">
               <li>
                 <a
-                  href="/institutional-login"
+                  href="/institutional"
                   className="hover:text-[#08734A] transition-colors"
                 >
-                  Institutional Login
+                  Institutional Orders
                 </a>
               </li>
+
               <li>
                 <a
-                  href="/bulk-inquiry"
+                  href="/institutional#rfq"
                   className="hover:text-[#08734A] transition-colors"
                 >
                   Bulk Inquiry
